@@ -23,6 +23,11 @@ pipeline{
                 sh "mvn package"
             }
         }
+       stage('Docker Image Creation') {
+            steps {
+                sh 'docker build -t vijayhub11/healthcare:latest .'
+            }
+          }
     }
 }
 
